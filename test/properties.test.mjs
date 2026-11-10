@@ -230,3 +230,10 @@ test('backup envelope: the iteration count read from a file is bounded on both s
   const atCeiling = await envelopeAt(K, p, 1200000);
   assert.deepEqual(await C.unwrapBackupKey({ ...atCeiling, tours: 1e12 }, p), K);
 });
+
+test('media RTC2: a type cut at 200 bytes in the middle of a character decodes like the app (U+FFFD)', async () => {
+  const type = 'a'.repeat(199) + 'é';                  // 201 bytes; the cut falls inside 'é'
+  const back = await C.decryptMedia(keyA, await C.encryptMediaV2(keyA, bytes(3), type));
+  assert.equal(back.type, 'a'.repeat(199) + '�');  // TextDecoder, non-fatal, as in 18-coffre.js
+  assert.equal(back.bytes.length, 3);
+});
