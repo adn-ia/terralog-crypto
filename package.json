@@ -1,0 +1,12 @@
+{
+  "name": "terralog-crypto",
+  "version": "0.1.0",
+  "description": "The end-to-end encryption core of Terralog (travel journal): key derivation, text and media formats, encrypted backups. Extracted from the app, byte-for-byte.",
+  "type": "module",
+  "main": "src/terralog-crypto.mjs",
+  "exports": "./src/terralog-crypto.mjs",
+  "scripts": { "test": "node --test test/*.test.mjs" },
+  "engines": { "node": ">=20" },
+  "license": "MIT",
+  "author": "Helmi Mekaoui"
+}

@@ -1,0 +1,364 @@
+{
+  "genere": "2026-11-10",
+  "source": "app code (blocs/14-derive.js, 18-coffre.js, 70-exports.js part 1)",
+  "normalize": [
+    {
+      "input": "  Jean  ",
+      "notebook": "jean",
+      "backup": "jean"
+    },
+    {
+      "input": "ÉLODIE",
+      "notebook": "élodie",
+      "backup": "élodie"
+    },
+    {
+      "input": "Ｊｅａｎ",
+      "notebook": "jean",
+      "backup": "jean"
+    },
+    {
+      "input": "KKelvin",
+      "notebook": "kkelvin",
+      "backup": "kkelvin"
+    },
+    {
+      "input": "İstanbul",
+      "notebook": "i̇stanbul",
+      "backup": "i̇stanbul"
+    },
+    {
+      "input": "ß straße",
+      "notebook": "ß straße",
+      "backup": "ß straße"
+    },
+    {
+      "input": "ﬁn",
+      "notebook": "fin",
+      "backup": "fin"
+    },
+    {
+      "input": "a  b\tc\nd",
+      "notebook": "a b c d",
+      "backup": "a b c d"
+    },
+    {
+      "input": "서울 여행",
+      "notebook": "서울 여행",
+      "backup": "서울 여행"
+    },
+    {
+      "input": "東京　旅行",
+      "notebook": "東京 旅行",
+      "backup": "東京 旅行"
+    },
+    {
+      "input": "كتاب",
+      "notebook": "كتاب",
+      "backup": "كتاب"
+    },
+    {
+      "input": "Ⅻ ①",
+      "notebook": "xii 1",
+      "backup": "xii 1"
+    },
+    {
+      "input": "ẛ̣",
+      "notebook": "ṩ",
+      "backup": "ṩ"
+    },
+    {
+      "input": "café",
+      "notebook": "café",
+      "backup": "café"
+    },
+    {
+      "input": "café",
+      "notebook": "café",
+      "backup": "café"
+    },
+    {
+      "input": "",
+      "notebook": "",
+      "backup": ""
+    },
+    {
+      "input": "   ",
+      "notebook": "",
+      "backup": ""
+    }
+  ],
+  "b64u": [
+    {
+      "hex": "",
+      "b64u": ""
+    },
+    {
+      "hex": "19",
+      "b64u": "GQ"
+    },
+    {
+      "hex": "3e3a",
+      "b64u": "Pjo"
+    },
+    {
+      "hex": "b51f37",
+      "b64u": "tR83"
+    },
+    {
+      "hex": "d0bf39b8",
+      "b64u": "0L85uA"
+    },
+    {
+      "hex": "eeb4d33cb8",
+      "b64u": "7rTTPLg"
+    },
+    {
+      "hex": "5f8ade7d3fbfded8a21c49ea8ee174a69a6b41c77a7e7eaedf9d7329b47665",
+      "b64u": "X4refT-_3tiiHEnqjuF0ppprQcd6fn6u351zKbR2ZQ"
+    },
+    {
+      "hex": "3da6db74cefd7d440f6877e529b894982ec053cfe2ecb0ab2cbdcbb7c7c0872b",
+      "b64u": "PabbdM79fUQPaHflKbiUmC7AU8_i7LCrLL3Lt8fAhys"
+    },
+    {
+      "hex": "7601059ffbe084a486d81b6cf1691c090ff81b0cedddcaa1bd429d0cdebfa935e0",
+      "b64u": "dgEFn_vghKSG2Bts8WkcCQ_4Gwzt3cqhvUKdDN6_qTXg"
+    }
+  ],
+  "notebook": [
+    {
+      "firstName": "Alice",
+      "code": "123456",
+      "passphrase": "le phare de brugge au soleil",
+      "link": "QvdHYJMFIBOs-Yp_55T3ibE4Hhy8cdwM0uacAordx4s",
+      "ownerToken": "eUazfSw84nPAw6DdIl6cxb8tjhSxdfOM31fmOREXewM",
+      "master": "5baNsy18s5QGDzdsuaLV-eObcfHbyl2YM8xCO_Ip_Jw"
+    },
+    {
+      "firstName": "  ÉLODIE ",
+      "code": "000000",
+      "passphrase": "Trois  Mots  Bien  Choisis  ici",
+      "link": "Ug-lEKaC5HLFpxMtnuv-OrjX9POO_W3eS7VOgE2Ia_8",
+      "ownerToken": "RS9Izve7SEK0P5pFI296TTGRriKS6payioijp2PKE60",
+      "master": "tKbmr5wHV3xWa1qCIstSAI9H-iyjDHVH4dPw6jBpvVs"
+    },
+    {
+      "firstName": "민지",
+      "code": "987654",
+      "passphrase": "서울 부산 제주 여행 기록",
+      "link": "7b__Sl024kUEsRHAZT5AQ8tnai1VJ20JCxEuAbT62p4",
+      "ownerToken": "g3sa8iOMNjsgEcPN0t7zUx0sZizgp-0-u73H86zroxc",
+      "master": "KSFd7UTFVQFM-0X2DI61c8bUWGRSS4J8M8fv1Y_czR0"
+    }
+  ],
+  "trip": [
+    {
+      "master": "5baNsy18s5QGDzdsuaLV-eObcfHbyl2YM8xCO_Ip_Jw",
+      "tripName": "Escapade Bruges",
+      "created": 1786000000000,
+      "link": "LAw2ZPcwpu5NrOcx5FiIMsiPNIy9kkDzJ5J4AeJ48Zc",
+      "ownerToken": "wlot0XblH7Rp2kn0mViWc7PSeBsY6ctznZ_CQ-g2zxc"
+    },
+    {
+      "master": "5baNsy18s5QGDzdsuaLV-eObcfHbyl2YM8xCO_Ip_Jw",
+      "tripName": "  NORVÈGE  été ",
+      "created": 1790000000123,
+      "link": "ZZyHqAek0a55Y_rrMzpkTof-85kQN5U481nLQgGm_eE",
+      "ownerToken": "SGRLwohQ0pPTJPXTzdFpsW3WNswD7XI8cHtOsuQOQt8"
+    },
+    {
+      "master": "5baNsy18s5QGDzdsuaLV-eObcfHbyl2YM8xCO_Ip_Jw",
+      "tripName": "",
+      "created": 0,
+      "link": "M9_cBRxIyA7RZ_Se6QwF8jdN4O8F3k7VCA_hGn1Wt9k",
+      "ownerToken": "2ma4Aps6-BNvEFTO2XLc6zXrUqOhRhy7Nr9f3YlclYM"
+    }
+  ],
+  "readingMaterial": {
+    "master": "5baNsy18s5QGDzdsuaLV-eObcfHbyl2YM8xCO_Ip_Jw",
+    "notebookAddress": "LAw2ZPcwpu5NrOcx5FiIMsiPNIy9kkDzJ5J4AeJ48Zc",
+    "v2": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+    "v1": "3c4ua1vQpjqLGe7ztxCFahExNEmQnnfali9VBz7a35k"
+  },
+  "text": [
+    {
+      "material": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+      "text": "Le beffroi au soleil",
+      "random": [
+        "554fb3d7788365bb8f16bb30"
+      ],
+      "ciphertext": "RTC1:VU-z13iDZbuPFrsw5sLPeAF27eLrEGyR8CylqEMUAb3gxBVEnOpS2cXpe15NVrSf"
+    },
+    {
+      "material": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+      "text": "Maman",
+      "random": [
+        "1b4de11dc1e57899d872acae"
+      ],
+      "ciphertext": "RTC1:G03hHcHleJnYcqyuHFvbpjjcJ0NeGjDVljPihs_ci0w5"
+    },
+    {
+      "material": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+      "text": "서울에서 첫날 🌸",
+      "random": [
+        "2dc68d2f9190785d747419c2"
+      ],
+      "ciphertext": "RTC1:LcaNL5GQeF10dBnC5GG27BvmJZ4hT69Gl-EWtfjROiEY3VYpkHydKrdJTXNjfW8Turb_ug"
+    },
+    {
+      "material": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+      "text": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "random": [
+        "f4772e31ec2b031606fa1085"
+      ],
+      "ciphertext": "RTC1:9HcuMewrAxYG-hCFUlwprjj3O1NBESaUlxOSvOheIZpD7tSq4NNUgLtFKDaLy5ajf5IMOpwIJzzGobq7vgIAjIwR_RhPRrfOGBXtmJOzVeZ-ggtGBKKKg9oq_wlA5_LshorvC2f5fcoOp9Q3b588bhfeviAeV-Yii1e4vbvsKQ0fMlmcv23pGsFXjkaTJND4881Ldvdc1WbJ29yPsgMAYuNRYwVO7xdPNTEVMvDypjutiW9Z_YHNZyAwsBV5PbMIwUpfPbYbMgZdOmlTcpZG-L4QCw-NOaiHPjozkw0EcuP-4rfs2QE5BVxm910C8HTq_dgQrVohZ0ZEKBf5ISgNYi3n1XCaeHbRw6IVVpzgBZk2Fz9HwafASoJxDGCqRT1t7YH_XnfMutqLtPzhDUMkWGxqMTk6le-KAXJewTen55TyuloAwk2A4g"
+    },
+    {
+      "material": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+      "text": "0",
+      "random": [
+        "a29924d3b1c800c7fca6834c"
+      ],
+      "ciphertext": "RTC1:opkk07HIAMf8poNMDuMBAB96Tq_svyEBaZ_s4gA"
+    }
+  ],
+  "mediaV1": [
+    {
+      "material": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+      "size": 0,
+      "type": "image/jpeg",
+      "random": [
+        "bee60851f3efb510af0d868a"
+      ],
+      "sha256": "9d2add2b71c9e2381a1d1d40c4028d728ba8d5ceb2e220f6d5ca7bd5b6ce4d92",
+      "head": "52544331bee60851f3efb510af0d868a8d90e906893149cab11731a6d155f5dad08da213f3d9acc639caba"
+    },
+    {
+      "material": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+      "size": 1000,
+      "type": "image/jpeg",
+      "random": [
+        "932e65e9862bd649b5fe36ac"
+      ],
+      "sha256": "6d14d31b98c131560a4e6211135bc07b308f748b9a491398b1eb55908b3938ec",
+      "head": "52544331932e65e9862bd649b5fe36ac2165881dafc8fd5b80f112b61193154a3e24adcae1c9499bbbac15890404f15c"
+    },
+    {
+      "material": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+      "size": 70000,
+      "type": "video/mp4",
+      "random": [
+        "cde7f6ee18ac06c075fd182e"
+      ],
+      "sha256": "71a4c54eddac317f40fb2fc611f0d586c70ff02aed57fe22edce98531ee4c6a3",
+      "head": "52544331cde7f6ee18ac06c075fd182e09a6dc23dd87d1db38b70e683ccca834638fbf12460765f994c64d744a78e518"
+    },
+    {
+      "material": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+      "size": 10,
+      "type": "x/ignored",
+      "random": [
+        "8aba1a5a30f9ff0241f1b644"
+      ],
+      "sha256": "2691645b4f41cdf15769a2fd02a361d32e2fb1934c5c1f36d72a6a35228b6c2e",
+      "head": "525443318aba1a5a30f9ff0241f1b644b8d8f62a103771a234baca611a1f5e7a1fd7ca6e588f3638f5f877f56f19a0ec"
+    }
+  ],
+  "mediaV2": [
+    {
+      "material": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+      "size": 0,
+      "type": "image/png",
+      "epoch": 0,
+      "random": [
+        "6ad82313eac4b0a0c2ae24b7"
+      ],
+      "sha256": "8cc7bea80f79edcd1cc5e46e4ffeb7d6da5a0d13d9c2adcdcf5024f4ccd53633",
+      "head": "525443326ad82313eac4b0a0c2ae24b70000000000343f5ed995303f0356dffb9c52d30a117dca5743b0bced0713ea"
+    },
+    {
+      "material": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+      "size": 5000,
+      "type": "audio/mp4",
+      "epoch": 3,
+      "random": [
+        "f6b8a065a2d8b5910caf6ebc"
+      ],
+      "sha256": "67c0ddf71d44cea611354d7bcee631ac1438147f760c79b809aea548d7605f8c",
+      "head": "52544332f6b8a065a2d8b5910caf6ebc0300001388d840f189befa671238192f53e48e27b0f640c751ff431a3b91a3f3"
+    },
+    {
+      "material": "x9SnJCnBY2_6BcJi0KXqLAkURqxtgUgExn39rF3X0Cc",
+      "size": 12,
+      "type": "type/é",
+      "epoch": null,
+      "random": [
+        "3d81d69332198908ee72cc6a"
+      ],
+      "sha256": "0dea9baefe7655663516fc5a2ccae216a40ea07080106ffe2ee6cc31dbfbe8d5",
+      "head": "525443323d81d69332198908ee72cc6a000000000cc73885ae2e2b32ebed9b3cc653026eba0688d5f4b49ba3d3543d52"
+    }
+  ],
+  "backup": [
+    {
+      "size": 0,
+      "kind": "manifeste",
+      "uid": null,
+      "random": [
+        "ee3199dd17809bf8"
+      ],
+      "sha256": "28b665c2575bfb4b551782dd224cafc126c4a4c5d579b7b4bf146533d18356a5",
+      "headerLength": 295
+    },
+    {
+      "size": 3000,
+      "kind": "media",
+      "uid": "u1a2b3",
+      "random": [
+        "632fb310bbe19417"
+      ],
+      "sha256": "34160bef932af33e808f73482c4fd689eaf094df697ecc66b78c31b58f01f422",
+      "headerLength": 309
+    },
+    {
+      "size": 1048581,
+      "kind": "media",
+      "uid": "opaque-77",
+      "random": [
+        "63a75f59e2a2952d"
+      ],
+      "sha256": "6550900ae518374170bffa3ae9b2d48e94d444b71836627f74949d20c3880182",
+      "headerLength": 315
+    }
+  ],
+  "backupKey": {
+    "phrase": "  La Mer du Nord en Hiver, 2026  ",
+    "key": "93f6c5b087189270ad3709ce7d52fd0b7934fca8d303e0d8357e27e71da406ba",
+    "envelopeRandom": [
+      "7099abeff804672e5b527105b31e58ca",
+      "7ade9d1750c4e8a1689b8be0"
+    ],
+    "envelope": {
+      "sel": "cJmr7_gEZy5bUnEFsx5Yyg",
+      "tours": 600000,
+      "iv": "et6dF1DE6KFom4vg",
+      "ct": "DAzjDsefIIBZul3q9_nWL5Umc3jqgJq-WZ4mYEHWdspITzXjFlS1kdjlUY-ULvhv"
+    }
+  },
+  "container": {
+    "files": [
+      "28b665c2575bfb4b551782dd224cafc126c4a4c5d579b7b4bf146533d18356a5",
+      "34160bef932af33e808f73482c4fd689eaf094df697ecc66b78c31b58f01f422",
+      "6550900ae518374170bffa3ae9b2d48e94d444b71836627f74949d20c3880182"
+    ],
+    "sha256": "2d8ca6d3e8253823d2b3014a2f93e90d0e2699ddcc4fb6714b461d0e38109b91"
+  },
+  "server": {
+    "link": "LAw2ZPcwpu5NrOcx5FiIMsiPNIy9kkDzJ5J4AeJ48Zc",
+    "linkFingerprint": "87d17e92dd3800faca95838985f892997a71c2b1ee7c52d1f4b3b158f49b701b",
+    "token": "eUazfSw84nPAw6DdIl6cxb8tjhSxdfOM31fmOREXewM",
+    "salt": "00112233445566778899aabbccddeeff",
+    "ownerTokenFingerprint": "26793635e57f7341dfe1bed5528f15393fec6e88f8054f099bd94ae868f8aada"
+  }
+}
