@@ -222,7 +222,7 @@ export function createTerralogCrypto({ subtle, getRandomValues } = {}) {
    * 'RTC1:' + base64url(IV(12) ‖ AES-GCM(text) ‖ tag(16)). No associated data.
    * An empty value stays empty (null / undefined / '' are returned unchanged).
    * Difference with the app: without a key the app's coffreChiffrerTexte returned the text
-   * unchanged (and did the same if encryption failed); since 2026-11-10 the app refuses to send
+   * unchanged (and did the same if encryption failed); since the November 2026 version the app refuses to send
    * such a value (couche-relais.js, fuiteDeClair). Here it simply throws.
    */
   async function encryptText(key, text) {

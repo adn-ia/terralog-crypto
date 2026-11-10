@@ -30,7 +30,7 @@ norm(t)    = NFKC(t), trimmed, lowercased, runs of whitespace replaced by one sp
 - The salt is fixed and public. It cannot be random: a new phone must recompute the same
   address from the three inputs alone, without asking the server anything.
 - The passphrase must be at least four words, or, for scripts written without spaces, 8 signs
-  (CJK) or 12 (Hangul). Since November 2026, for **new notebooks only**, it must also reach 16
+  (CJK) or 12 (Hangul). Since the November 2026 version, for **new notebooks only**, it must also reach 16
   signs once spaces and punctuation are removed (12 for Hangul, 8 for CJK), and is refused if
   it is all digits, a repetition, or a contiguous slice of the Latin alphabet or of a keyboard
   row (azerty, qwerty, qwertz). An existing notebook keeps the passphrase it was made with.
@@ -80,7 +80,7 @@ value = "RTC1:" ‖ b64u( IV(12 random bytes) ‖ AES-256-GCM(contentKey, IV, ut
 No associated data. An empty value stays empty. A value without the prefix is text written
 before encryption existed (before 28 August 2026) and is shown as is.
 
-Since 10 November 2026 the app refuses to send any of these fields in clear (before that, a
+Since the November 2026 version, the app refuses to send any of these fields in clear (before that, a
 missing key made it fall back to clear text; see §9.6).
 
 ## 6. Media files — `RTC1` (written) and `RTC2` (read only)
@@ -157,7 +157,7 @@ Family links are 32 random bytes drawn by the server. Owner links are derived (�
 Media files are static files: the web server serves them to anyone who has their URL. The
 name is the only access control: 128 random bits drawn by the relay or, when the client gives
 a stable media key so that a resend overwrites instead of duplicating, the first 128 bits of
-SHA-256(internal notebook id ‖ key ‖ size), the internal id being known only to the relay.
+SHA-256(internal notebook id ‖ "|" ‖ key ‖ "|" ‖ decimal size), the internal id being known only to the relay.
 
 The relay does not log IP addresses; the hosting provider may. The code and the passphrase
 never leave the device and are not stored. The device stores, in clear, in the browser's
@@ -175,7 +175,7 @@ test guesses offline, at the cost of 600 000 PBKDF2 iterations per guess, and ea
 checked against every notebook at once. A correct guess yields the master key: every
 reading material, so every text and file of that notebook, and the owner token.
 
-What limits it: the passphrase rules of §2 (for notebooks created since November 2026),
+What limits it: the passphrase rules of §2 (for notebooks created since the November 2026 version),
 the first name and the code adding some entropy, and the cost per guess. What does not:
 there is no per-notebook salt and no server-side secret. A per-notebook salt would break
 recovery on a new phone, which must find its notebook from the three inputs alone.
@@ -222,7 +222,7 @@ fragment, which is never sent.
 
 ### 9.6 Clear-text fallback (fixed)
 
-Until 10 November 2026, the text encryption function returned the text unchanged when no key
+Until the November 2026 version, the text encryption function returned the text unchanged when no key
 was available or when encryption failed. In practice this happened for followers holding a
 link from before 28 August 2026 (no `#k=`): their comment and name were stored in clear.
 The app now refuses to send.
