@@ -1,2 +1,5 @@
 node_modules/
 .DS_Store
+relay/relais/config.php
+relay/relais/creation.php
+relay/relais/push.php

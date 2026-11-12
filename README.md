@@ -21,8 +21,8 @@ What it covers:
 | Backups | `rtSauve…` | key envelope under a passphrase, chunked `.tlg` files, `TLGC1` container |
 | Server fingerprints | `lien_empreinte`, `prop_empreinte` | what the relay stores instead of links and tokens |
 
-What it does not cover: the relay (server), the user interface, the service worker that
-serves decrypted media, and payments. Those stay closed for now.
+What it does not cover: the user interface and the service worker that serves decrypted
+media. The relay (the server side) is published in `relay/`: see below.
 
 The format specification, with its known limits, is in `SPEC.md`.
 
@@ -40,6 +40,34 @@ const { link, ownerToken, master } = await tc.deriveNotebook('Ana', '123456', 'a
 const key = await tc.contentKey(await tc.readingMaterialV2(master, link));
 const sealed = await tc.encryptText(key, 'Hello from Bruges');
 ```
+
+## The relay
+
+`relay/` holds the server code that receives and returns what the app sends. It is
+byte-for-byte the code deployed on terralog.be (comments are in French).
+
+| File | Role |
+|---|---|
+| `relay/relais.php` | the only entry point: read, comment, publish, revoke, purge, push subscriptions |
+| `relay/depot.php` | receives media files, already encrypted on the phone (`RTC1`), and stores them as they arrive |
+| `relay/relais/base.php` | database schema and connection |
+| `relay/relais/proprietaire.php`, `liens.php` | owner tokens and share links, stored as fingerprints only |
+| `relay/relais/chiffrer.php`, `vapid.php`, `envoyer.php` | Web Push notifications (RFC 8291 encryption, VAPID), with no third-party service |
+| `relay/relais/.htaccess` | the folder is closed to the web |
+
+What it lets you check:
+
+- the relay receives only encrypted content: the key travels after `#` in the share link,
+  and browsers never send that part to a server;
+- it stores fingerprints of links and tokens, never the links themselves;
+- every refusal is the same answer, in the same time, whatever the reason;
+- it sends nothing to anyone else: no analytics, no third-party service. The only outgoing
+  requests are push notifications, to the push address the browser itself provided.
+
+What the database holds, column by column, and the known limits are in `SPEC.md` (§8, §9).
+
+Secrets are not in this repository: the database login, the push key and the account-creation
+gate live in files that never leave the server. `*.exemple.php` shows their shape.
 
 ## Tests
 

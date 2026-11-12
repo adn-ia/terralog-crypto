@@ -1,0 +1,9 @@
+# Ce dossier ne se sert pas. Il contient les identifiants de la base et la clé de
+# signature : rien ici ne doit jamais partir vers un navigateur, même si PHP tombe.
+<IfModule mod_authz_core.c>
+  Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>
