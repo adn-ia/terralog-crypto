@@ -50,6 +50,7 @@ byte-for-byte the code deployed on terralog.be (comments are in French).
 |---|---|
 | `relay/relais.php` | the only entry point: read, comment, publish, revoke, purge, push subscriptions |
 | `relay/depot.php` | receives media files, already encrypted on the phone (`RTC1`), and stores them as they arrive |
+| `relay/depot/.htaccess` | the upload folder serves bytes and never executes anything |
 | `relay/relais/base.php` | database schema and connection |
 | `relay/relais/proprietaire.php`, `liens.php` | owner tokens and share links, stored as fingerprints only |
 | `relay/relais/chiffrer.php`, `vapid.php`, `envoyer.php` | Web Push notifications (RFC 8291 encryption, VAPID), with no third-party service |

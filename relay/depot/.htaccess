@@ -1,0 +1,56 @@
+# ═══ CE DOSSIER REND DES OCTETS. IL N'EXÉCUTE RIEN. ════════════════════════════════════
+#
+# Tout ce qui est ici vient du dehors : ce sont les fichiers déposés par les clients. Un
+# dépôt qui exécute ce qu'il reçoit, c'est le serveur offert à celui qui envoie.
+#
+# ⚠️ CE QU'ON NE PROMET PAS. Sur un mutualisé, la configuration d'Apache ne nous appartient
+# pas : on ne GARANTIT pas la non-exécution, on empile des couches jusqu'à ce qu'elle soit
+# très improbable, et on l'ÉPROUVE avec un vrai fichier PHP. La garantie réelle demanderait
+# un sous-domaine servi sans PHP du tout — à reprendre le jour du VPS (ligne 125).
+#
+# ⚠️ CHAQUE LIGNE A ÉTÉ ESSAYÉE SUR LE SERVEUR, une par une puis ensemble, le 26/08.
+# one.com REFUSE — le dossier entier tombe alors en 500, donc plus RIEN n'est servi :
+#     · `Require all denied`        (syntaxe Apache 2.4, l'hôte est en 2.2)
+#     · `Options -ExecCGI -Includes`
+#     · `php_flag engine off` EN MÊME TEMPS que `SetHandler` — l'un ou l'autre, pas les deux.
+# Ne pas les remettre « pour faire mieux » : ce serait couper le service en croyant le durcir.
+
+# 1. Un seul gestionnaire pour tout le dossier : celui qui rend des octets. Choisi contre
+#    `php_flag engine off`, qui ne vaut que si PHP tourne en module ; celui-ci vaut aussi
+#    quand il tourne en FPM.
+SetHandler default-handler
+RemoveHandler .php .php3 .php4 .php5 .php7 .php8 .phtml .phar .pht .cgi .pl .py .shtml
+RemoveType .php .php3 .php4 .php5 .php7 .php8 .phtml .phar .pht .shtml
+
+# 2. Une extension exécutable est refusée, y compris en seconde position (`photo.jpg.php`).
+#    Les fichiers cachés aussi : un `.htaccess` déposé par un client réécrirait tout ceci.
+<FilesMatch "\.(?i:php|php[0-9]|phtml|phar|pht|shtml|cgi|pl|py|asp|aspx|jsp|htaccess|htpasswd)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule \.(?i:php|php[0-9]|phtml|phar|pht|shtml|cgi|pl|py)$ - [F,L]
+</IfModule>
+# Dernier filet : même servi, ce serait du texte, jamais du code.
+AddType text/plain .php .php3 .php4 .php5 .php7 .php8 .phtml .phar .pht .shtml .cgi .pl .py
+
+# 2 bis. Ce que le serveur ANNONCE doit être exact, puisqu'on interdit de deviner. Un webm
+#        audio porte l'extension `.weba` — `depot.php` la choisit sur ce que le client déclare,
+#        après que `finfo` a validé le conteneur.
+AddType audio/webm .weba
+
+# 3. Le navigateur ne requalifie rien en reniflant — c'est ainsi qu'une image piégée devient
+#    une page — et il n'exécute aucun script venu d'ici.
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Content-Security-Policy "default-src 'none'; sandbox"
+</IfModule>
+
+# 4. On ne liste jamais : le nom tiré au sort est le seul secret qui protège une photo.
+Options -Indexes
+IndexIgnore *
