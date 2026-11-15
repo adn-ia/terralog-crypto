@@ -84,6 +84,7 @@ npm test        # Node 20 or later, no install needed
 
 Please open an issue, or write to the address given in
 https://terralog.be/.well-known/security.txt for anything that should not be public.
+I confirm that I got your report within 7 days.
 
 ## License
 
