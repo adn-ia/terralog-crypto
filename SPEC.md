@@ -13,8 +13,10 @@ A person keeps a travel journal (a *notebook*) on their phone and shares it with
 through a link. There is no account. The relay (a small PHP server) stores and serves
 encrypted rows and files; it is the adversary this design is meant to defeat: someone who
 reads the server's disk or database should not learn what people wrote, photographed, or
-where they went. The owner re-finds their notebook on a new phone by typing three things:
+where they went. The encryption is derived from three things the owner chooses:
 a first name, a 6-digit code, and a passphrase. Everything else is derived from those.
+They are not a recovery mechanism: restoring a notebook on another device is done from the
+backup (§7), with its own backup phrase.
 
 ## 2. Notebook derivation
 
@@ -27,8 +29,8 @@ master     = b64u(out[64..96])    never leaves the device
 norm(t)    = NFKC(t), trimmed, lowercased, runs of whitespace replaced by one space
 ```
 
-- The salt is fixed and public. It cannot be random: a new phone must recompute the same
-  address from the three inputs alone, without asking the server anything.
+- The salt is fixed and public. It cannot be random: the same three inputs must always derive
+  the same address and keys, without asking the server anything.
 - The passphrase must be at least four words, or, for scripts written without spaces, 8 signs
   (CJK) or 12 (Hangul). Since the November 2026 version, for **new notebooks only**, it must also reach 16
   signs once spaces and punctuation are removed (12 for Hangul, 8 for CJK), and is refused if
@@ -177,8 +179,8 @@ reading material, so every text and file of that notebook, and the owner token.
 
 What limits it: the passphrase rules of §2 (for notebooks created since the November 2026 version),
 the first name and the code adding some entropy, and the cost per guess. What does not:
-there is no per-notebook salt and no server-side secret. A per-notebook salt would break
-recovery on a new phone, which must find its notebook from the three inputs alone.
+there is no per-notebook salt and no server-side secret. A per-notebook salt would have to be
+stored somewhere, and the derivation must work from the three inputs alone.
 
 ### 9.2 No associated data in RTC1
 
